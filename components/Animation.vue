@@ -1,10 +1,7 @@
 <template>
   <div>
     <canvas id="bg" ref="canvas"></canvas>
-    <div
-      ref="main"
-      class="main-content"
-    >
+    <div ref="main" class="main-content">
       <slot />
     </div>
   </div>
@@ -68,17 +65,6 @@ const onWindowResize = (camera) => {
     : 0
 }
 
-const isInViewport = (element: HTMLElement) => {
-  const rect = element.getBoundingClientRect()
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  )
-}
-
 const createTorus = () => {
   const geometry = new TorusGeometry(10, 3, 16, 50)
   const material = new MeshBasicMaterial({
@@ -136,6 +122,15 @@ onMounted(() => {
 
   onWindowResize(camera)
   animate(scene, camera)
+
+  if (window) {
+    window.addEventListener('resize', debounce(onWindowResize, 300), false)
+  }
+})
+onUnmounted(() => {
+  if (window) {
+    window.removeEventListener('resize')
+  }
 })
 </script>
 
