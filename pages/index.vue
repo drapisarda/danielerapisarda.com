@@ -1,10 +1,7 @@
 <template>
   <div>
-    
+    <h1 style="color: red;">LOL</h1>
   </div>
 </template>
-<script setup>
-</script>
-<style lang="scss">
-  
-</style>
+<script lang="ts" setup></script>
+<style lang="scss"></style>
