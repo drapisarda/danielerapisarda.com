@@ -18,6 +18,7 @@ import {
   TorusGeometry,
   SphereGeometry,
   MeshBasicMaterial,
+  type Material,
 } from 'three'
 
 const main = ref<HTMLDivElement>()
@@ -40,14 +41,14 @@ const scrollTop = computed((): number => {
 })
 
 const animate = (scene: Scene) => {
-  requestAnimationFrame(() => animate(scene, camera))
+  requestAnimationFrame(() => animate(scene))
 
   const { scrollTop } = document.documentElement
   torus.rotation.x += 0.01
   torus.rotation.y += 0.005
   torus.rotation.z += 0.01
   torus.position.z = torusBaseZ - scrollTop * 0.1
-  torus.material.opacity = Math.min(
+  ;(torus.material as Material).opacity = Math.min(
     maxOpacity,
     torusBaseOpacity * ((scrollTop + maxScrollHeight) / maxScrollHeight),
   )
