@@ -26,6 +26,7 @@ const torusBaseOpacity = 0.5
 let torus: Mesh
 let world: Mesh
 let renderer: WebGLRenderer
+let camera: PerspectiveCamera
 let maxScrollHeight = 0
 const torusBaseZ = 0
 const cameraBaseZ = 30
@@ -38,7 +39,7 @@ const scrollTop = computed((): number => {
   return -main.value.scrollTop
 })
 
-const animate = (scene: Scene, camera: PerspectiveCamera) => {
+const animate = (scene: Scene) => {
   requestAnimationFrame(() => animate(scene, camera))
 
   const { scrollTop } = document.documentElement
@@ -56,7 +57,7 @@ const animate = (scene: Scene, camera: PerspectiveCamera) => {
   renderer.render(scene, camera)
 }
 
-const onWindowResize = (camera: PerspectiveCamera) => {
+const onWindowResize = () => {
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
   renderer.setSize(window.innerWidth, window.innerHeight)
@@ -95,7 +96,7 @@ const createWorld = () => {
 
 onMounted(() => {
   const scene = new Scene()
-  const camera = new PerspectiveCamera(
+  camera = new PerspectiveCamera(
     50,
     window.innerWidth / window.innerHeight,
     0.1,
@@ -116,20 +117,17 @@ onMounted(() => {
   scene.add(world)
   scene.add(torus)
 
-  onWindowResize(camera)
-  animate(scene, camera)
+  onWindowResize()
+  animate(scene)
 
   if (window) {
-    window.addEventListener(
-      'resize',
-      debounce(() => onWindowResize(camera), 1000),
-      false,
-    )
+    window.addEventListener('resize', debounce(onWindowResize, 1000), false)
   }
 })
+
 onUnmounted(() => {
   if (window) {
-    window.removeEventListener('resize')
+    window.removeEventListener('resize', debounce(onWindowResize, 1000), false)
   }
 })
 </script>
