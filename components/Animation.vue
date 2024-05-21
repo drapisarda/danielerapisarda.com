@@ -56,7 +56,7 @@ const animate = (scene: Scene, camera: PerspectiveCamera) => {
   renderer.render(scene, camera)
 }
 
-const onWindowResize = (camera) => {
+const onWindowResize = (camera: PerspectiveCamera) => {
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
   renderer.setSize(window.innerWidth, window.innerHeight)
@@ -116,15 +116,15 @@ onMounted(() => {
   scene.add(world)
   scene.add(torus)
 
-  if (window) {
-    window.addEventListener('resize', debounce(onWindowResize, 300), false)
-  }
-
   onWindowResize(camera)
   animate(scene, camera)
 
   if (window) {
-    window.addEventListener('resize', debounce(onWindowResize, 300), false)
+    window.addEventListener(
+      'resize',
+      debounce(() => onWindowResize(camera), 1000),
+      false,
+    )
   }
 })
 onUnmounted(() => {
