@@ -2,8 +2,231 @@
 @import 'reset';
 @import 'typography';
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+html {
+}
+
+body {
+  color: $text;
+  background: $darkBg;
+}
+
+main {
+  max-width: $widescreen;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+
+  > section {
+    scroll-snap-align: start;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: $primary;
+}
+
+.container {
+  width: $container-width;
+  max-width: 100%;
+  padding: 2em;
+  margin: auto;
+
+  p + p {
+    margin-top: 1em;
+  }
+}
+
+a,
+a:visited {
+  font-weight: bold;
+  color: $primary;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $secondary;
+}
+
+ul li {
+  list-style: none;
+}
+
+
+$neonOnColor: $primary;
+$neonBright: scale-color($neonOnColor, $saturation: +20%);
+$neonOffColor: scale-color($neonOnColor, $lightness: -70%);
+$neonWarmingHighColor: scale-color($neonOnColor, $lightness: -60%);
+$duration: 3s;
+
+.neon {
+  opacity: 0;
+  animation: neon 3s ease-in .5s;
+  animation-fill-mode: forwards;
+  text-shadow: 0 0 transparent;
+}
+
+@keyframes neon {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 transparent;
+  }
+
+  10% {
+    opacity: 0.2;
+  }
+
+  43% {
+    opacity: 0.4;
+  }
+
+  44% {
+    opacity: 0;
+  }
+
+  54% {
+    opacity: 0;
+  }
+
+  56% {
+    opacity: 1;
+  }
+
+  58% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+  
+  73% {
+    opacity: 1;
+    text-shadow: 0 0 transparent;
+  }
+
+  74% {
+    text-shadow: 1px 1px 40px $neonBright;
+  }
+  
+  75% {
+    text-shadow: 0 0 transparent;
+  }
+  
+  100% {
+    text-shadow: 0 0 transparent;
+    opacity: 1;
+  }
+}
+
+.neon_color {
+  color: $neonOffColor;
+  text-shadow: 0 0 transparent;
+  animation: neon_color $duration ease-in;
+  animation-fill-mode: forwards;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: $neonOnColor;
+    animation: neon_bright $duration ease-in;
+    animation-fill-mode: forwards;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    border-radius: 100%;
+  }
+}
+
+@keyframes neon_color {
+  0% {
+    color: $neonOffColor;
+  }
+
+  42% {
+    color: $neonWarmingHighColor;
+  }
+
+  44% {
+    color: $neonOffColor;
+  }
+
+  54% {
+    color: $neonOffColor;
+  }
+
+  56% {
+    color: $neonOnColor;
+  }
+
+  58% {
+    color: $neonOffColor;
+  }
+
+  60% {
+    color: $neonOnColor;
+    text-shadow: 0 0 transparent;
+  }
+  
+  74% {
+    text-shadow: 1px 1px 20px $neonOnColor;
+  }
+  
+  100% {
+    text-shadow: 0 0 transparent;
+    color: $neonOnColor;
+    text-shadow: 1px 1px 3px $neonOnColor;
+  }
+}
+
+@keyframes neon_bright {
+  10% {
+    opacity: 0;
+  }
+
+  42% {
+    opacity: 0.4;
+  }
+
+  44% {
+    opacity: 0;
+  }
+
+  54% {
+    opacity: 0;
+  }
+
+  56% {
+    opacity: 0.4;
+  }
+
+  58% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+  
+  74% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
 }
