@@ -45,7 +45,14 @@ h1 {
   }
 
   &--small {
-    width: $container-small-width;
+    width: $container-width-small;
+  }
+
+  p, ul {
+    max-width: 100%;
+    width: $container-width-small;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
