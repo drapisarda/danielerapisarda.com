@@ -1,34 +1,38 @@
 <template>
-  <div class="logos-bar container container--small">
-    <ul class="logos-bar__list">
-      <li>
-        <Html />
-      </li>
-      <li>
-        <Css />
-      </li>
-      <li>
-        <Sass />
-      </li>
-      <li>
-        <Typescript />
-      </li>
-      <li>
-        <Vue />
-      </li>
-      <li>
-        <Nuxt />
-      </li>
-      <li>
-        <Php />
-      </li>
-      <li>
-        <Symfony />
-      </li>
-      <li>
-        <Git />
-      </li>
-    </ul>
+  <div class="logos-bar container">
+    <div class="logos-bar__list">
+      <ul>
+        <li>
+          <Html />
+        </li>
+        <li>
+          <Css />
+        </li>
+        <li>
+          <Sass />
+        </li>
+        <li>
+          <Typescript />
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <Vue />
+        </li>
+        <li>
+          <Nuxt />
+        </li>
+        <li>
+          <Php />
+        </li>
+        <li>
+          <Symfony />
+        </li>
+        <li>
+          <Git />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -65,14 +69,20 @@ import Php from '@/assets/img/php.svg'
 
   &__list {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
 
     li {
       padding: 1rem;
-      width: calc($tablet / 10);
+      width: calc($desktop / 12);
 
       svg {
         width: 100%;

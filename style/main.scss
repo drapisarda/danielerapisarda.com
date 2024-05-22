@@ -48,7 +48,7 @@ h1 {
     width: $container-width-small;
   }
 
-  p, ul {
+  > p, > ul{
     max-width: 100%;
     width: $container-width-small;
     margin-right: auto;
