@@ -34,16 +34,18 @@ const cameraBaseZ = 30
 const worldBaseY = -35
 const maxOpacity = 0.2
 const mainColor = '#FF124F'
+let scrollTop = 0
 
 const getScrollTop = () => {
+  console.log('scroll')
   if (!main.value || !main.value.children[0]) return 0
-  return -main.value.children[0].scrollTop
+  scrollTop = -main.value.children[0].scrollTop
+  console.log(scrollTop)
 }
 
 const animate = (scene: Scene) => {
   requestAnimationFrame(() => animate(scene))
 
-  const scrollTop = getScrollTop()
   // console.log(scrollTop)
   torus.rotation.x += 0.01
   torus.rotation.y += 0.005
@@ -78,7 +80,7 @@ const createTorus = () => {
   })
 
   torus = new Mesh(geometry, material)
-  torus.position.set(13, 10, torusBaseZ + getScrollTop() * 0.1)
+  torus.position.set(13, 10, torusBaseZ + scrollTop * 0.1)
   return torus
 }
 
@@ -123,13 +125,27 @@ onMounted(() => {
   animate(scene)
 
   if (window) {
-    window.addEventListener('resize', debounce(onWindowResize, 1000), false)
+    window.addEventListener('resize', debounce(onWindowResize, 500), false)
+  }
+  if (main.value) {
+    main.value.children[0].addEventListener(
+      'scroll',
+      debounce(getScrollTop, 10),
+      false,
+    )
   }
 })
 
 onUnmounted(() => {
   if (window) {
-    window.removeEventListener('resize', debounce(onWindowResize, 1000), false)
+    window.removeEventListener('resize', debounce(onWindowResize, 500), false)
+  }
+  if (main.value) {
+    main.value.children[0].removeEventListener(
+      'scroll',
+      debounce(getScrollTop, 10),
+      false,
+    )
   }
 })
 </script>
