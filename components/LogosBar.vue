@@ -33,6 +33,7 @@
 </template>
 
 <script lang="ts" setup>
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // https://www.svgrepo.com/author/gilbarbara/
 import Css from '@/assets/img/css-3.svg'
 import Git from '@/assets/img/git.svg'
