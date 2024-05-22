@@ -43,6 +43,10 @@ h1 {
   p + p {
     margin-top: 1em;
   }
+
+  &--small {
+    width: $container-small-width;
+  }
 }
 
 a,

@@ -11,6 +11,7 @@
             a Front End Engineer <br />
             based in Berlin, Germany
           </h2>
+          <LogosBar />
         </section>
         <section id="technologies" ref="technologies" class="container">
           <h3>Technologies I like to play with</h3>
@@ -117,6 +118,8 @@
 
   > section {
     scroll-snap-align: start;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 </style>
