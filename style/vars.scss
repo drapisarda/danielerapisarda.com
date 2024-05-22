@@ -7,6 +7,7 @@ $fullhd: 1344px + (2 * $gap);
 
 $container-width: $desktop;
 $container-width-small: $tablet;
+$logo-width: calc($desktop / 12); 
 
 // colors
 $primary: #ce2260;

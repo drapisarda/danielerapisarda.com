@@ -1,0 +1,26 @@
+<template>
+  <div class="links-bar">
+    <LogosBar :logos="logos" />
+  </div>
+</template>
+
+<script lang="ts" setup>
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// https://www.svgrepo.com/author/gilbarbara/
+import LinkedIn from '@/assets/img/linkedin.svg'
+import GitHub from '@/assets/img/GitHub.svg'
+import type Logo from '@/types/logo'
+
+const logos: Logo[] = [
+  {
+    name: 'My LinkedIn profile',
+    svg: LinkedIn,
+    link: 'https://linkedin.com/in/danielerapisarda',
+  },
+  {
+    name: 'My GitHub profile',
+    svg: GitHub,
+    link: 'https://github.com/drapisarda/',
+  },
+]
+</script>

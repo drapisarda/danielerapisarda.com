@@ -2,34 +2,18 @@
   <div class="logos-bar container">
     <div class="logos-bar__list">
       <ul>
-        <li>
-          <Html />
-        </li>
-        <li>
-          <Css />
-        </li>
-        <li>
-          <Sass />
-        </li>
-        <li>
-          <Typescript />
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Vue />
-        </li>
-        <li>
-          <Nuxt />
-        </li>
-        <li>
-          <Php />
-        </li>
-        <li>
-          <Symfony />
-        </li>
-        <li>
-          <Git />
+        <!-- eslint-disable-next-line vue/valid-v-for -->
+        <li v-for="(logo, index) in logos" :key="index" class="logo">
+          <component :is="logo.svg" v-if="!logo.link" />
+          <template v-else>
+            <a
+              :aria-label="logo.name ? logo.name : undefined"
+              :href="logo.link"
+              target="_blank"
+            >
+              <component :is="logo.svg" />
+            </a>
+          </template>
         </li>
       </ul>
     </div>
@@ -37,21 +21,14 @@
 </template>
 
 <script lang="ts" setup>
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// https://www.svgrepo.com/author/gilbarbara/
-import Css from '@/assets/img/css-3.svg'
-import Git from '@/assets/img/git.svg'
-import Html from '@/assets/img/html-5.svg'
-import Nuxt from '@/assets/img/nuxt.svg'
-import Sass from '@/assets/img/sass.svg'
-import Typescript from '@/assets/img/typescript.svg'
-import Vue from '@/assets/img/vue.svg'
+import type Logo from '@/types/logo'
 
-// https://www.svgrepo.com/svg/374114/symfony
-import Symfony from '@/assets/img/symfony.svg'
-
-// Garuda Technology https://www.svgrepo.com/svg/452088/php
-import Php from '@/assets/img/php.svg'
+defineProps({
+  logos: {
+    type: Object as PropType<Logo[]>,
+    required: true,
+  },
+})
 </script>
 
 <style lang="scss">
@@ -78,16 +55,6 @@ import Php from '@/assets/img/php.svg'
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-    }
-
-    li {
-      padding: 1rem;
-      width: calc($desktop / 12);
-
-      svg {
-        width: 100%;
-        height: auto;
-      }
     }
   }
 }

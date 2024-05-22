@@ -12,7 +12,7 @@
               a Front End Engineer <br />
               based in Berlin, Germany
             </h2>
-            <LogosBar />
+            <TecnologiesBar />
           </div>
         </section>
 
@@ -94,28 +94,13 @@
         <section id="contact-links" ref="contact">
           <div class="container">
             <h3>You can know more about me here</h3>
-            <ul class="links links--h">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/danielerapisarda/"
-                  target="_blank"
-                  >LinkedIn</a
-                >
-              </li>
-              <li>
-                <a href="https://github.com/drapisarda/" target="_blank"
-                  >GitHub</a
-                >
-              </li>
-            </ul>
+            <LinksBar />
           </div>
         </section>
       </div>
     </Animation>
   </div>
 </template>
-
-<script lang="ts" setup></script>
 
 <style lang="scss">
 @import '../style/vars';
