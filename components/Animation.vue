@@ -37,16 +37,13 @@ const mainColor = '#FF124F'
 let scrollTop = 0
 
 const getScrollTop = () => {
-  console.log('scroll')
   if (!main.value || !main.value.children[0]) return 0
   scrollTop = -main.value.children[0].scrollTop
-  console.log(scrollTop)
 }
 
 const animate = (scene: Scene) => {
   requestAnimationFrame(() => animate(scene))
 
-  // console.log(scrollTop)
   torus.rotation.x += 0.01
   torus.rotation.y += 0.005
   torus.rotation.z += 0.01
