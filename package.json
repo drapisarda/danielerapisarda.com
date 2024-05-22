@@ -1,6 +1,7 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "danielerapisarda.com",
+  "version": "2.0.0",
+  "private": false,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
