@@ -11,10 +11,7 @@ body {
 }
 
 main {
-  max-width: $widescreen;
-  margin-right: auto;
-  margin-left: auto;
-  height: 100vh;
+  min-height: 100vh;
   overflow: auto;
   scroll-snap-type: y mandatory;
 
@@ -35,8 +32,8 @@ h1 {
 }
 
 .container {
-  width: $container-width;
-  max-width: 100%;
+  width: 100%;
+  max-width: $container-width;
   padding: 0 1.5rem;
   margin: 1.5rem auto;
 
@@ -45,12 +42,12 @@ h1 {
   }
 
   &--small {
-    width: $container-width-small;
+    max-width: $container-width-small;
   }
 
   > p, > ul{
-    max-width: 100%;
-    width: $container-width-small;
+    width: 100%;
+    max-width: $container-width-small;
     margin-right: auto;
     margin-left: auto;
   }
