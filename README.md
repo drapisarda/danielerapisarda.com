@@ -1,4 +1,5 @@
-# Nuxt 3 Minimal Starter
+# danielerapisarda.com
+My personal Website, done in Vue3 + Nuxt
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
