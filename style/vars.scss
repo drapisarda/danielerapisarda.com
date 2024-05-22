@@ -1,6 +1,3 @@
-$bodyFontFamily: 'Quattrocento', 'Times new roman', 'Arial', 'Helvetica', serif;
-$highlightsFontFamily: 'Lora', 'Times new roman', 'Arial', 'Helvetica', serif;
-
 $gap: 12px;
 $miniMobile: 400px;
 $tablet: 769px;
@@ -8,7 +5,7 @@ $desktop: 960px + (2 * $gap);
 $widescreen: 1152px + (2 * $gap);
 $fullhd: 1344px + (2 * $gap);
 
-$container-width: 900px;
+$container-width: $desktop;
 
 // colors
 $primary: #ce2260;
