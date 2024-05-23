@@ -8,7 +8,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // https://www.svgrepo.com/author/gilbarbara/
 import LinkedIn from '@/assets/img/linkedin.svg'
-import GitHub from '@/assets/img/GitHub.svg'
+import GitHub from '@/assets/img/github.svg'
 import type Logo from '@/types/logo'
 
 const logos: Logo[] = [
