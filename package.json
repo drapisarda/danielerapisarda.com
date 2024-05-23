@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.10",
     "debounce": "^2.0.0",
     "nuxt": "^3.11.2",
     "three": "^0.164.1",
