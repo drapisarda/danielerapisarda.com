@@ -57,7 +57,7 @@ defineProps({
       justify-content: space-around;
       width: 100%;
 
-      @media (min-width: $desktop) {
+      @media (min-width: $tablet) {
         justify-content: center;
       }
     }
@@ -66,13 +66,13 @@ defineProps({
   li {
     display: block;
     padding: 1rem;
-    width: 25%;
-    height: 8rem;
+    width: clamp(7rem, 25%, $container-width/9);
+    aspect-ratio: 1;
 
     @media (min-width: $tablet) {
       flex: 1;
       width: auto;
-      max-width: 33%;
+      max-width: 12%;
       padding: 1rem;
     }
 
