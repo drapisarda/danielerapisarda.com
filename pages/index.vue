@@ -31,6 +31,9 @@
 
         <section id="serenegrove" ref="serenegrove">
           <div class="container">
+            <div class="center">
+              <logoSG />
+            </div>
             <h3>SereneGrove</h3>
             <p>
               SereneGrove is an experimental project made to give the meditation
@@ -104,6 +107,10 @@
   </div>
 </template>
 
+<script lang="ts" setup>
+import logoSG from '@/assets/img/serenegrove/logo_serenegrove.svg'
+</script>
+
 <style lang="scss">
 @import '../style/vars';
 
@@ -118,6 +125,15 @@
     scroll-snap-align: start;
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+}
+
+#serenegrove {
+  margin-bottom: 3rem;
+
+  svg {
+    fill: $text;
+    max-height: 10rem;
   }
 }
 </style>
