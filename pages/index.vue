@@ -98,8 +98,12 @@
 
         <section id="contact-links" ref="contact">
           <div class="container">
-            <h3>You can know more about me here</h3>
+            <h3>You can learn more about me here</h3>
             <LinksBar />
+            <p>
+              or send me an email at <br />
+              info at danielerapisarda.com
+            </p>
           </div>
         </section>
       </div>
