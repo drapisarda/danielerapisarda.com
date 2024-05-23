@@ -59,7 +59,7 @@
             <ul class="links">
               <li>
                 <a
-                  href="http://www.danielerapisarda.com/visualizeblocks/"
+                  href="http://links.danielerapisarda.com/visualizeblocks/"
                   target="_blank"
                   >Visualize Blocks</a
                 >
@@ -74,7 +74,9 @@
                 - a p5js experiment...
               </li>
               <li>
-                <a href="http://www.danielerapisarda.com/bolle/" target="_blank"
+                <a
+                  href="http://links.danielerapisarda.com/bolle/"
+                  target="_blank"
                   >Bolle</a
                 >
                 ...and another one...
