@@ -1,5 +1,5 @@
 $gap: 12px;
-$miniMobile: 400px;
+$mobile: 435px;
 $tablet: 769px;
 $desktop: 960px + (2 * $gap);
 $widescreen: 1152px + (2 * $gap);
@@ -7,7 +7,6 @@ $fullhd: 1344px + (2 * $gap);
 
 $container-width: $desktop;
 $container-width-small: $tablet;
-$logo-width: calc($desktop / 12); 
 
 // colors
 $primary: #ce2260;

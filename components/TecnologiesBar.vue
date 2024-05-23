@@ -10,7 +10,6 @@
 import Html from '@/assets/img/html-5.svg'
 import Css from '@/assets/img/css-3.svg'
 import Sass from '@/assets/img/sass.svg'
-import Git from '@/assets/img/git.svg'
 import Nuxt from '@/assets/img/nuxt.svg'
 import Typescript from '@/assets/img/typescript.svg'
 import Vue from '@/assets/img/vue.svg'
@@ -46,9 +45,6 @@ const logos: Logo[] = [
   },
   {
     svg: Symfony,
-  },
-  {
-    svg: Git,
   },
 ]
 </script>

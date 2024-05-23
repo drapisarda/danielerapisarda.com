@@ -54,7 +54,31 @@ defineProps({
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
+
+      @media (min-width: $desktop) {
+        justify-content: center;
+      }
+    }
+  }
+
+  li {
+    display: block;
+    padding: 1rem;
+    width: 25%;
+    height: 8rem;
+
+    @media (min-width: $tablet) {
+      flex: 1;
+      width: auto;
+      max-width: 33%;
+      padding: 1rem;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
     }
   }
 }

@@ -37,6 +37,14 @@ h1 {
   padding: 0 1.5rem;
   margin: 1.5rem auto;
 
+  section > &:first-child {
+    margin-top: 0;
+  }
+
+  section > &:last-child {
+    margin-bottom: 0;
+  }
+
   p + p {
     margin-top: 1em;
   }
@@ -68,18 +76,6 @@ a:hover {
 ul li {
   list-style: none;
 }
-
-.logo {
-  width: $logo-width;
-  padding: 1rem;
-  display: block;
-
-  svg {
-    width: 100%;
-    height: auto;
-  }
-}
-
 
 $neonOnColor: $primary;
 $neonBright: scale-color($neonOnColor, $saturation: +20%);
