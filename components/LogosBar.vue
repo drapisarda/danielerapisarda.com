@@ -55,6 +55,7 @@ defineProps({
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-around;
+      width: 100%;
 
       @media (min-width: $desktop) {
         justify-content: center;
