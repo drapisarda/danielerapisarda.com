@@ -1,4 +1,4 @@
-@import 'vars';
+@use 'vars';
 
 /* latin-ext */
 @font-face {
@@ -25,7 +25,7 @@
 
 html {
   font-size: 12px;
-  @media (min-width: $tablet) {
+  @media (min-width: vars.$tablet) {
     font-size: 18px;
   }
 }
@@ -73,5 +73,5 @@ small, .text_small {
 }
 
 em {
-  color: $quaternary;
+  color: vars.$quaternary;
 }

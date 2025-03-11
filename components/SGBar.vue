@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Bell from '@/assets/img/serenegrove/001-standing-bell.svg'
 import Shree from '@/assets/img/serenegrove/002-shree.svg'
 import Meditation from '@/assets/img/serenegrove/003-meditation.svg'
@@ -13,6 +12,7 @@ import Lendscape from '@/assets/img/serenegrove/004-landscape.svg'
 import Breath from '@/assets/img/serenegrove/005-breath.svg'
 import type Logo from '@/types/logo'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const logos: Logo[] = [
   {
     svg: Bell,
@@ -33,7 +33,7 @@ const logos: Logo[] = [
 </script>
 
 <style lang="scss">
-@import '../style/vars.scss';
+@use '../style/vars.scss';
 
 .sgbar-bar {
   position: absolute;
@@ -63,7 +63,7 @@ const logos: Logo[] = [
   }
 
   svg {
-    fill: $primary;
+    fill: vars.$primary;
     opacity: 0.3;
     animation: float-y 16s ease-in-out infinite;
   }

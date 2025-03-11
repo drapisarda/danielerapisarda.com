@@ -12,7 +12,7 @@
               a Front End Engineer <br />
               based in Berlin, Germany
             </h2>
-            <TecnologiesBar />
+            <TechnologiesBar />
           </div>
         </section>
 
@@ -63,7 +63,7 @@
             <ul class="links">
               <li>
                 <a
-                  href="http://links.danielerapisarda.com/visualizeblocks/"
+                  href="https://www.danielerapisarda.com/visualizeblocks/"
                   target="_blank"
                   >Visualize Blocks</a
                 >
@@ -79,7 +79,7 @@
               </li>
               <li>
                 <a
-                  href="http://links.danielerapisarda.com/bolle/"
+                  href="https://www.danielerapisarda.com/bolle/"
                   target="_blank"
                   >Bolle</a
                 >
@@ -113,11 +113,12 @@
 </template>
 
 <script lang="ts" setup>
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import logoSG from '@/assets/img/serenegrove/logo_serenegrove.svg'
 </script>
 
 <style lang="scss">
-@import '../style/vars';
+@use '../style/vars';
 
 .main-content {
   max-width: none;
@@ -137,7 +138,7 @@ import logoSG from '@/assets/img/serenegrove/logo_serenegrove.svg'
   margin-bottom: 3rem;
 
   svg {
-    fill: $text;
+    fill: vars.$text;
     max-height: 10rem;
   }
 }

@@ -32,11 +32,13 @@ defineProps({
 </script>
 
 <style lang="scss">
-@import '../style/vars';
+@use '../style/vars';
 
 .logos-bar {
   display: flex;
   justify-content: center;
+  overflow: visible;
+  max-width: 100%;
 
   &__title {
     flex: 1;
@@ -57,7 +59,7 @@ defineProps({
       justify-content: space-around;
       width: 100%;
 
-      @media (min-width: $tablet) {
+      @media (min-width: vars.$tablet) {
         justify-content: center;
       }
     }
@@ -66,10 +68,10 @@ defineProps({
   li {
     display: block;
     padding: 1rem;
-    width: clamp(7rem, 25%, $container-width/9);
+    width: clamp(7rem, 25%, vars.$container-width/9);
     aspect-ratio: 1;
 
-    @media (min-width: $tablet) {
+    @media (min-width: vars.$tablet) {
       flex: 1;
       width: auto;
       max-width: 12%;

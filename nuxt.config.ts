@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   modules: ['@nuxt/eslint'],
+
   vite: {
     resolve: {
       alias: [
@@ -16,4 +17,6 @@ export default defineNuxtConfig({
     },
     plugins: [svgLoader()],
   },
+
+  compatibilityDate: '2025-03-11',
 })

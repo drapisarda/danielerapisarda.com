@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-/* eslint-disable @typescript-eslint/no-unused-vars */
 // https://www.svgrepo.com/author/gilbarbara/
 import Html from '@/assets/img/html-5.svg'
 import Css from '@/assets/img/css-3.svg'
@@ -21,6 +20,7 @@ import Symfony from '@/assets/img/symfony.svg'
 import Php from '@/assets/img/php.svg'
 import type Logo from '@/types/logo'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const logos: Logo[] = [
   {
     svg: Html,

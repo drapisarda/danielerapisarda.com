@@ -1,13 +1,14 @@
-@import 'vars';
-@import 'reset';
-@import 'typography';
+@use 'sass:color';
+@use 'vars';
+@use 'reset';
+@use 'typography';
 
 html {
 }
 
 body {
-  color: $text;
-  background: $darkBg;
+  color: vars.$text;
+  background: vars.$darkBg;
 }
 
 main {
@@ -29,14 +30,15 @@ section {
 }
 
 h1 {
-  color: $primary;
+  color: vars.$primary;
 }
 
 .container {
   width: 100%;
-  max-width: $container-width;
+  max-width: vars.$container-width;
   padding: 0 1.5rem;
   margin: 1.5rem auto;
+  overflow: hidden;
 
   section > &:first-child {
     margin-top: 0;
@@ -51,12 +53,12 @@ h1 {
   }
 
   &--small {
-    max-width: $container-width-small;
+    max-width: vars.$container-width-small;
   }
 
   > p, > ul{
     width: 100%;
-    max-width: $container-width-small;
+    max-width: vars.$container-width-small;
     margin-right: auto;
     margin-left: auto;
   }
@@ -69,13 +71,13 @@ h1 {
 a,
 a:visited {
   font-weight: bold;
-  color: $primary;
+  color: vars.$primary;
   text-decoration: underline;
 }
 
 a:hover {
   text-decoration: none;
-  color: $secondary;
+  color: vars.$secondary;
 }
 
 ul li {
@@ -87,10 +89,10 @@ svg {
   max-height: 100%;
 }
 
-$neonOnColor: $primary;
-$neonBright: scale-color($neonOnColor, $saturation: +20%);
-$neonOffColor: scale-color($neonOnColor, $lightness: -70%);
-$neonWarmingHighColor: scale-color($neonOnColor, $lightness: -60%);
+$neonOnColor: vars.$primary;
+$neonBright: color.scale($neonOnColor, $saturation: +20%);
+$neonOffColor: color.scale($neonOnColor, $lightness: -70%);
+$neonWarmingHighColor: color.scale($neonOnColor, $lightness: -60%);
 $duration: 3s;
 
 .neon {
