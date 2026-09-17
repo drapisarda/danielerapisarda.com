@@ -61,14 +61,14 @@
           <div class="container">
             <h3>Small projects</h3>
             <ul class="links">
-              <li>
+              <!-- <li>
                 <a
                   href="https://www.danielerapisarda.com/visualizeblocks/"
                   target="_blank"
                   >Visualize Blocks</a
                 >
                 - Where I play with GitHub commits data and ThreeJs
-              </li>
+              </li> -->
               <li>
                 <a
                   href="https://openprocessing.org/sketch/1370769"
