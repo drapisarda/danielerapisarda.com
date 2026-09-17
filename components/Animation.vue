@@ -103,10 +103,15 @@ onMounted(() => {
     0.1,
     500,
   )
-  renderer = new WebGLRenderer({
-    canvas: canvas.value,
-    alpha: true,
-  })
+  try {
+    renderer = new WebGLRenderer({
+      canvas: canvas.value,
+      alpha: true,
+    })
+  } catch {
+    // ponytail: no WebGL (GPU disabled/headless), skip 3D bg instead of crashing
+    return
+  }
 
   renderer.setClearColor(0xff0000, 0) // the default
   renderer.setPixelRatio(window.devicePixelRatio)
